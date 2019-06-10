@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 10:07:27 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/08 21:24:54 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/10 11:39:10 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	str_prec(char *str, int len, t_buff *buff)
 		ft_buffer(str[i++], buff);
 }
 
-static void	str_width(char *str, t_data_tab *data, t_buff *buff)
+static void	str_width(char *str, t_data *data, t_buff *buff)
 {
 	int	spaces;
 
@@ -51,7 +51,7 @@ static void	str_width(char *str, t_data_tab *data, t_buff *buff)
 	}
 }
 
-int			pf_s(va_list ap, t_data_tab *data, t_buff *buff)
+int			pf_s(va_list ap, t_data *data, t_buff *buff)
 {
 	char	*str;
 

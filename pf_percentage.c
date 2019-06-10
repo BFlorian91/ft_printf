@@ -6,13 +6,13 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 03:03:31 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/08 21:27:05 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/10 11:38:48 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		pf_percentage(va_list ap, t_data_tab *data, t_buff *buff)
+int		pf_percentage(va_list ap, t_data *data, t_buff *buff)
 {
 	int	spaces;
 
