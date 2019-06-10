@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 19:16:08 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/10 11:35:53 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/10 11:45:44 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_printf(const char *format, ...)
 {
-	t_data	data;
+	t_data		data;
 	t_buff		buff;
 	int			index;
 	va_list		ap;
