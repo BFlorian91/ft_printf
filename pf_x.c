@@ -6,7 +6,7 @@
 /*   By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 15:50:59 by flbeaumo          #+#    #+#             */
-/*   Updated: 2019/06/10 11:40:09 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/10 17:58:09 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	checkflags_x(char *str, unsigned long long nbr, t_data *data)
 
 static void	flagwidth_x(char *str, t_data *data, t_buff *buff)
 {
-	if (data->flags[hashtag] && data->flags[zero])
+	if (data->flags[hashtag] > 0 && data->flags[zero])
 	{
 		ft_buffer('0', buff);
 		ft_buffer(data->conv, buff);
@@ -68,7 +68,7 @@ int			pf_x(va_list ap, t_data *data, t_buff *buff)
 		flagwidth_x(str, data, buff);
 	else
 	{
-		if (data->flags[hashtag])
+		if (data->flags[hashtag] > 0 && nbr != 0)
 		{
 			ft_buffer('0', buff);
 			ft_buffer(data->conv, buff);
