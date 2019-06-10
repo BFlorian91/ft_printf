@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 08:35:31 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/10 11:40:55 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/10 17:42:14 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 static void	c_flags(int c, t_data *data, t_buff *buff)
 {
-	int	spaces;
+	int		spaces;
+	char	d;
 
+	d = ' ';
 	spaces = data->flags[width];
 	if (data->flags[just_left])
 	{
@@ -25,8 +27,10 @@ static void	c_flags(int c, t_data *data, t_buff *buff)
 	}
 	else
 	{
+		if (data->flags[zero])
+			d = '0';
 		while (--spaces > 0)
-			ft_buffer(' ', buff);
+			ft_buffer(d, buff);
 		ft_buffer(c, buff);
 	}
 }
