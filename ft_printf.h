@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 09:28:29 by sgury             #+#    #+#             */
-/*   Updated: 2019/06/10 18:00:04 by sgury            ###   ########.fr       */
+/*   Updated: 2019/06/11 11:24:16 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void					ft_precision(char *str, t_data *data, t_buff *buff);
 char					*ft_ftoa(long double nbr, t_data *data);
 long double				ft_get_float(va_list ap, t_data *data);
 char					*reverse_base(char *str, int neg, int base);
+int						ft_get_color(const char *str, int index, t_buff *buff);
 
 #endif
