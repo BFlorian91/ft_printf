@@ -6,7 +6,7 @@
 #    By: flbeaumo <flbeaumo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 12:59:31 by flbeaumo          #+#    #+#              #
-#    Updated: 2019/06/11 11:37:53 by sgury            ###   ########.fr        #
+#    Updated: 2019/06/16 11:32:21 by flbeaumo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,8 +62,6 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-CFLAGS_L = -fsanitize=address -fno-omit-frame-pointer 
-
 NC = 	 \033[0m
 RED =	 \033[0;31m
 BLUE =	 \033[1;34m
@@ -75,27 +73,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
-	@clear
 	@echo "\033[2A $(GREEN) [ Compile status ]		 [OK] $(NC)"
 
 %.o: %.c 
 	@$(CC) -o $@ -c $< $(CFLAGS)
 	@echo "\033[1A $(YELLOW)Compiling:$(BLUE) $< \033[K 	$(GREEN) [OK] $(NC)"
 
-test:
-	@gcc  main.c $(NAME)
-	@./a.out
-
-debug:
-	@gcc $(CFLAGS) $(CFLAGS_L) main.c $(NAME)
-	@./a.out
-
-leak:
-	@gcc $(CFLAGS) main.c $(NAME)
-	@valgrind --leak-check=full ./a.out
-
-norm:
-	norminette $(SRCS_PATH) $(HEADER_PATH) $(LIB_C_PATH)
 
 clean:
 	@rm -rf $(OBJ)
@@ -106,3 +89,5 @@ fclean: clean
 	@echo "$(RED) Remove Binary:$(NC)			$(GREEN) [OK] $(NC)"
 
 re: fclean all
+
+.PHONY: clean all re fclean
